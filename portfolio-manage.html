@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>作品集管理</title>
+    <!-- 引入字体 -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- 引入图标库 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css"
+    />
+    <!-- 引入Markdown编辑器 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css"
+    />
+    <!-- 引入自定义样式 -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="portfolio-manage.css" />
+  </head>
+  <body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+      <div class="logo">
+        <h1>作品集管理</h1>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">返回首页</a>
+      </div>
+    </nav>
+
+    <!-- 作品集管理区域 -->
+    <div class="portfolio-manage-container">
+      <!-- 作品上传区域 -->
+      <div class="upload-section">
+        <h2>上传新作品</h2>
+        <form id="portfolioForm" class="upload-form">
+          <div class="form-group">
+            <label for="title">作品标题</label>
+            <input type="text" id="title" name="title" required />
+          </div>
+
+          <div class="form-group">
+            <label for="category">作品类别</label>
+            <select id="category" name="category" required>
+              <option value="web">Web开发</option>
+              <option value="design">设计</option>
+              <option value="app">应用开发</option>
+              <option value="other">其他</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="description">简短描述</label>
+            <textarea
+              id="description"
+              name="description"
+              rows="3"
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>详细内容</label>
+            <div class="content-type-selector">
+              <button
+                type="button"
+                class="content-type-btn active"
+                data-type="markdown"
+              >
+                Markdown
+              </button>
+              <button type="button" class="content-type-btn" data-type="media">
+                媒体文件
+              </button>
+            </div>
+
+            <div id="markdownEditor" class="content-section active">
+              <textarea id="mdContent"></textarea>
+            </div>
+
+            <div id="mediaUpload" class="content-section">
+              <div class="media-upload-area" id="dropZone">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>拖放文件到此处或点击上传</p>
+                <input
+                  type="file"
+                  id="fileInput"
+                  multiple
+                  accept="image/*,video/*"
+                />
+              </div>
+              <div class="media-preview" id="mediaPreview"></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="tags">技术标签</label>
+            <div class="tags-input">
+              <input type="text" id="tagInput" placeholder="输入标签后按回车" />
+              <div class="tags-container" id="tagsContainer"></div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="submit-btn">保存作品</button>
+            <button type="button" class="preview-btn">预览</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- 作品列表区域 -->
+      <div class="portfolio-list">
+        <h2>已上传作品</h2>
+        <div class="portfolio-items" id="portfolioItems">
+          <!-- 作品项将通过JavaScript动态添加 -->
+        </div>
+      </div>
+    </div>
+
+    <!-- 预览模态框 -->
+    <div class="modal" id="previewModal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="preview-content"></div>
+      </div>
+    </div>
+
+    <!-- 引入依赖库 -->
+    <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="portfolio-manage.js"></script>
+  </body>
+</html>

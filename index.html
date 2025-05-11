@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>我的个人网站</title>
+    <!-- 引入字体 -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- 引入图标库 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css"
+    />
+    <!-- 引入动画库 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"
+    />
+    <!-- 引入自定义样式 -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+      <div class="logo">
+        <h1>Chen</h1>
+      </div>
+      <div class="nav-links">
+        <a href="#home" class="active">首页</a>
+        <a href="#about">关于我</a>
+        <a href="#portfolio">作品集</a>
+        <a href="#chat">对话</a>
+      </div>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="carousel">
+        <div class="carousel-inner">
+          <!-- 轮播图片将通过JS动态添加 -->
+        </div>
+        <div class="carousel-indicators"></div>
+        <button class="carousel-prev" title="上一张图片">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="carousel-next" title="下一张图片">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- 个人简介 -->
+    <section id="about" class="about">
+      <div class="card">
+        <h2>关于我</h2>
+        <p>这里是我的个人简介，热爱技术，追求创新...</p>
+        <div class="icons">
+          <i class="fas fa-code"></i>
+          <i class="fas fa-paint-brush"></i>
+          <i class="fas fa-camera"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- 作品集 -->
+    <section id="portfolio" class="portfolio">
+      <h2 class="section-title">我的作品集</h2>
+      <div class="portfolio-filter">
+        <button class="filter-btn active" data-filter="all">全部</button>
+        <button class="filter-btn" data-filter="web">Web开发</button>
+        <button class="filter-btn" data-filter="design">设计</button>
+        <button class="filter-btn" data-filter="app">应用开发</button>
+      </div>
+      <div class="portfolio-grid">
+        <!-- 项目1 -->
+        <div class="portfolio-item" data-category="web">
+          <div class="portfolio-content">
+            <img
+              src="https://picsum.photos/400/300?random=10"
+              alt="个人博客项目"
+            />
+            <div class="portfolio-overlay">
+              <h3>个人博客系统</h3>
+              <p>基于React和Node.js的现代化博客系统</p>
+              <div class="tech-tags">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>MongoDB</span>
+              </div>
+              <div class="portfolio-links">
+                <a href="#" class="preview-link" title="查看详情">
+                  <i class="fas fa-eye"></i>
+                </a>
+                <a href="#" class="github-link" title="GitHub仓库">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 项目2 -->
+        <div class="portfolio-item" data-category="design">
+          <div class="portfolio-content">
+            <img
+              src="https://picsum.photos/400/300?random=11"
+              alt="UI设计作品"
+            />
+            <div class="portfolio-overlay">
+              <h3>现代化UI设计</h3>
+              <p>电商平台的用户界面设计</p>
+              <div class="tech-tags">
+                <span>Figma</span>
+                <span>UI/UX</span>
+                <span>原型设计</span>
+              </div>
+              <div class="portfolio-links">
+                <a href="#" class="preview-link" title="查看详情">
+                  <i class="fas fa-eye"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 项目3 -->
+        <div class="portfolio-item" data-category="app">
+          <div class="portfolio-content">
+            <img src="https://picsum.photos/400/300?random=12" alt="移动应用" />
+            <div class="portfolio-overlay">
+              <h3>健康追踪App</h3>
+              <p>基于Flutter的跨平台移动应用</p>
+              <div class="tech-tags">
+                <span>Flutter</span>
+                <span>Firebase</span>
+                <span>健康管理</span>
+              </div>
+              <div class="portfolio-links">
+                <a href="#" class="preview-link" title="查看详情">
+                  <i class="fas fa-eye"></i>
+                </a>
+                <a href="#" class="github-link" title="GitHub仓库">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 对话界面 -->
+    <section id="chat" class="chat-section">
+      <div class="chat-container">
+        <div class="chat-history">
+          <!-- 对话历史将通过JS动态添加 -->
+        </div>
+        <div class="chat-input">
+          <div class="input-wrapper">
+            <textarea placeholder="输入消息..." rows="1"></textarea>
+            <div class="input-buttons">
+              <button class="upload-btn" title="上传文件">
+                <i class="fas fa-paperclip"></i>
+              </button>
+              <button class="send-btn" title="发送消息">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+          <div class="chat-tools">
+            <button class="clear-btn">清空对话</button>
+            <button class="voice-btn" title="语音输入">
+              <i class="fas fa-microphone"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 社交媒体链接 -->
+    <footer class="social-links">
+      <a href="#" class="social-icon bilibili">
+        <i class="fab fa-bilibili"></i>
+      </a>
+      <a href="#" class="social-icon xiaohongshu">
+        <img
+          src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/svgs/brands/weibo.svg"
+          alt="小红书"
+        />
+      </a>
+      <a href="#" class="social-icon weibo">
+        <i class="fab fa-weibo"></i>
+      </a>
+      <a href="#" class="social-icon douyin">
+        <i class="fab fa-tiktok"></i>
+      </a>
+    </footer>
+
+    <!-- 引入JS库 -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/highlight.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
